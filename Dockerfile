@@ -8,8 +8,8 @@ RUN go build -o goapp .
 FROM alpine:3.18 as production
 LABEL authors="tutunak"
 COPY --from=builder /app/goapp /app/goapp
-RUN addgroup -S feedcheck && adduser -S feedcheck -G feedcheck && \
+RUN addgroup -S tgmoneybot && adduser -S tgmoneybot -G tgmoneybot && \
     chown -R goapp:goapp /app
 USER goapp
 WORKDIR /app
-CMD ["./feedcheck"]
+CMD ["./tgmoneybot"]
