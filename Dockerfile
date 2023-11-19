@@ -9,7 +9,7 @@ FROM alpine:3.18 as production
 LABEL authors="tutunak"
 COPY --from=builder /app/goapp /app/goapp
 RUN addgroup -S tgmoneybot && adduser -S tgmoneybot -G tgmoneybot && \
-    chown -R goapp:goapp /app
+    chown -R tgmoneybot:tgmoneybot /app
 USER goapp
 WORKDIR /app
 CMD ["./tgmoneybot"]
