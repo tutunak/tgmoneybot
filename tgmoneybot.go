@@ -34,6 +34,10 @@ func setUpHandlers(bot *tele.Bot) {
 		return context.Reply("pong")
 	})
 
+	bot.Handle(tele.OnText, func(context tele.Context) error {
+		return context.Reply("I've got your recorded your message.")
+	})
+
 }
 
 func main() {
