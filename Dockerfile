@@ -10,6 +10,6 @@ LABEL authors="tutunak"
 COPY --from=builder /app/goapp /app/goapp
 RUN addgroup -S tgmoneybot && adduser -S tgmoneybot -G tgmoneybot && \
     chown -R tgmoneybot:tgmoneybot /app
-USER goapp
+USER tgmoneybot
 WORKDIR /app
 CMD ["./tgmoneybot"]
